@@ -134,6 +134,3 @@ lspconfig.rust_analyzer.setup {
     },
   },
 }
-
--- Add rust-analyzer to mason-lspconfig ensure_installed
--- Note: This should be added to the mason-lspconfig plugin configuration
