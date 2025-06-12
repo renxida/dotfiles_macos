@@ -15,12 +15,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-enter = 'exec-and-forget open -n -a Alacritty'
 
     # Open browser with alt-shift-enter
-    alt-shift-enter = '''exec-and-forget osascript -e '
-    tell application "Google Chrome"
-        make new window
-        activate
-    end tell'
-    '''
+    alt-shift-enter = 'exec-and-forget open -n -a Firefox'
 
     # i3 wraps focus by default
     alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
