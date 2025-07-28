@@ -2,7 +2,17 @@ return {
   "epwalsh/obsidian.nvim",
   version = "*",
   lazy = true,
+  event = {
+    "BufReadPre " .. vim.fn.expand("~/Documents/personal") .. "/*",
+    "BufNewFile " .. vim.fn.expand("~/Documents/personal") .. "/*",
+    "VimEnter *",
+  },
   ft = "markdown",
+  cond = function()
+    local cwd = vim.fn.getcwd()
+    local personal_path = vim.fn.expand("~/Documents/personal")
+    return cwd:find(personal_path, 1, true) ~= nil
+  end,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim", -- Optional but recommended
